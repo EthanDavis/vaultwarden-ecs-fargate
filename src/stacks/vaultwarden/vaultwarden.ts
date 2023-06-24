@@ -12,7 +12,7 @@ import VaultwardenService from './constructs/vaultwarden-service'
 
 const BASE_IMAGE_NAME = 'vaultwarden/server'
 const BASE_VERSION = process.env.VAULTWARDEN_BASE_VERSION || 'latest'
-const DOMAIN_NAME = process.env.VAULTWARDEN_DOMAIN_NAME
+const DOMAIN_NAME = process.env.VAULTWARDEN_DOMAIN_NAME as string
 
 export type VaultwardenStackProps = cdk.StackProps & {
   //
@@ -26,7 +26,12 @@ export type VaultwardenStackProps = cdk.StackProps & {
  */
 class VaultwardenStack extends cdk.Stack {
   constructor(scope: Construct, id: string) {
-    super(scope, id)
+    super(scope, id, {
+      env: {
+        region: 'us-east-1',
+        account: '061940521405',
+      },
+    })
     cdk.Tags.of(this).add('x:stack', 'vaultwarden')
 
     const imageRepository = new ImageRepository(this, 'image-repository', {

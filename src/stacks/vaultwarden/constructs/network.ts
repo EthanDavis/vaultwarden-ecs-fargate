@@ -3,6 +3,7 @@ import * as ec2 from 'aws-cdk-lib/aws-ec2'
 
 // :: ---
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export type NetworkProps = {}
 
 /**
@@ -24,7 +25,7 @@ class Network extends Construct {
     this.vpc = new ec2.Vpc(this, 'network-vpc', {
       vpcName: 'vaultwarden-network',
 
-      cidr: '20.0.0.0/24', // :: Feel free to change this to something you prefer.
+      cidr: '20.0.0.0/26', // :: Feel free to change this to something you prefer.
       maxAzs: 2, // :: Feel free to change this to 3, if you'd like. Just two is plenty though.
 
       // :: The Vaultwarden workload doesn't particularly need to make outgoing requests ---
