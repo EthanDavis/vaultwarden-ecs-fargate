@@ -9,7 +9,6 @@ import { CnameRecord, HostedZone } from 'aws-cdk-lib/aws-route53'
 import type { Cluster } from 'aws-cdk-lib/aws-ecs'
 import type { Repository } from 'aws-cdk-lib/aws-ecr'
 import type { FileSystem } from 'aws-cdk-lib/aws-efs'
-import { Route53RecordTarget } from 'aws-cdk-lib/aws-route53-targets'
 
 // :: ---
 
@@ -58,6 +57,7 @@ class VaultwardenService extends Construct {
     const hzone = HostedZone.fromLookup(this, 'tigrisconsulting_hz', {
       domainName: 'tigrisconsulting.cloud',
     })
+
     const certificate = props.domainName
       ? new acm.Certificate(this, 'vaultwarden-cert', {
           domainName: props.domainName,
