@@ -76,6 +76,11 @@ Once you've cloned this repository to your local machine:
    ```shell
    yarn cdk deploy
    ```
+	 
+5. Once you're done you destroy all the resources you provisioned.
+	 ```shell
+	 yarn cdk destroy
+	 ```
 
    The deployment process will ask confirmation on a few items (specifically, security-based
    concerns). Provide your confirmation when prompted.
