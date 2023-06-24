@@ -1,0 +1,14 @@
+{
+  "availability-zones:account=061940521405:region=us-east-1": [
+    "us-east-1a",
+    "us-east-1b",
+    "us-east-1c",
+    "us-east-1d",
+    "us-east-1e",
+    "us-east-1f"
+  ],
+  "hosted-zone:account=061940521405:domainName=tigrisconsulting.cloud:region=us-east-1": {
+    "Id": "/hostedzone/Z00291681UQ6CGJGIY46K",
+    "Name": "tigrisconsulting.cloud."
+  }
+}
